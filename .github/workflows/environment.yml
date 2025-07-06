@@ -5,8 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BRANCH: main
+      USERNAME: ${{ vars.USERNAME}}
     steps:
-      - run: echo "${BRANCH}"
+      - run: echo "${USERNAME}"
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.ref }}
