@@ -5,11 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BRANCH: main
-      USERNAME: ${{ vars.USERNAME}}
-      PASSWORD: ${{ secrets.PASSWORD}}
+      USERNAME: ${{ vars.USERNAME }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+      CONTEXT: ${{ toJson(github) }}
     steps:
       - run: echo "${USERNAME}"
       - run: echo "${PASSWORD}"
+      - run: echo "${CONTEXT}"
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.ref }}
