@@ -6,8 +6,10 @@ jobs:
     env:
       BRANCH: main
       USERNAME: ${{ vars.USERNAME}}
+      PASSWORD: ${{ secrets.PASSWORD}}
     steps:
       - run: echo "${USERNAME}"
+      - run: echo "${PASSWORD}"
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.ref }}
